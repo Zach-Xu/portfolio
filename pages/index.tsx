@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
 
 const Home: NextPage = () => {
   return (
@@ -8,21 +10,25 @@ const Home: NextPage = () => {
       <Head>
         <title>Zhen's Portfolio</title>
       </Head>
+      <div className='h-screen bg-[rgb(36,36,36)] overflow-scroll snap-y snap-mandatory text-white' >
 
-      {/* Header */}
+        <Header />
 
-      {/* Hero */}
+        <section className=''>
+          <Hero />
+        </section>
 
-      {/* About */}
+        {/* About */}
 
-      {/* Education */}
+        {/* Education */}
 
-      {/* Skills */}
+        {/* Skills */}
 
-      {/* Projects */}
+        {/* Projects */}
 
-      {/* Contact Me */}
+        {/* Contact Me */}
 
+      </div>
     </div>
   )
 }
