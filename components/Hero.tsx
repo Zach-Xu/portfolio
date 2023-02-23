@@ -53,7 +53,7 @@ const Hero = (props: Props) => {
                 </div>
             </div>
             <div className='mt-24 md:mt-5 uppercase z-20'>
-                <ul className='list-none flex space-x-5'>
+                <ul className='list-none flex md:space-x-5 space-x-3'>
 
                     <li className='px-2 cursor-pointer'><a href="#about">About</a></li>
                     <li className='px-2 cursor-pointer'><a href="#skills">Skills</a></li>
