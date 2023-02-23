@@ -7,8 +7,8 @@ type Props = {}
 const intro: string[] = [
     "< Hi there, my name's Zhen />",
     "< You can call me Zach />",
-    "< I enjoy Web Development />",
-    "< Also a casual 4 fun gamer />"
+    "< I enjoy coding />",
+    "< Also a 4fun gamer />"
 ]
 
 const Hero = (props: Props) => {
@@ -22,7 +22,10 @@ const Hero = (props: Props) => {
     })
 
     return (
-        <div className='h-screen flex flex-col items-center justify-center pt-16 overflow-hidden'>
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2 }} className='h-screen flex flex-col items-center justify-center pt-16 overflow-hidden'>
             <div className='relative flex items-center justify-center '>
                 <motion.div
                     initial={{
@@ -53,12 +56,12 @@ const Hero = (props: Props) => {
                 <ul className='list-none flex space-x-5'>
 
                     <li className='px-2 cursor-pointer'><a href="#about">About</a></li>
-                    <li className='px-2 cursor-pointer'><a href="">Education</a></li>
-                    <li className='px-2 cursor-pointer'><a href="">Skills</a></li>
-                    <li className='px-2 cursor-pointer'><a href="">Projects</a></li>
+                    <li className='px-2 cursor-pointer'><a href="#skills">Skills</a></li>
+                    <li className='px-2 cursor-pointer'><a href="#projects">Projects</a></li>
+                    <li className='px-2 cursor-pointer'><a href="#education">Education</a></li>
                 </ul>
             </div>
-        </div>
+        </motion.div>
 
     )
 }
