@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "daisyui": "^2.51.0",
     "framer-motion": "^9.0.7",
     "next": "latest",
     "react": "18.2.0",

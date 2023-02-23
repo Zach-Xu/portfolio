@@ -5,7 +5,6 @@ import Education from '../components/Education'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
-import Skills from '../components/Skills'
 import dynamic from 'next/dynamic'
 
 const Home: NextPage = () => {

@@ -6,4 +6,12 @@
   html {
     @apply scroll-smooth;
   }
+
+  .section {
+    @apply h-screen min-h-[660px] flex flex-col relative items-center justify-center p-10 
+  }
+
+  .section-header {
+    @apply uppercase absolute md:top-28 top-20 text-gray-400 text-xl tracking-[1rem] overflow-hidden
+  }
 }
