@@ -25,16 +25,16 @@ const Hero = (props: Props) => {
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2 }} className='h-screen flex flex-col items-center justify-center pt-16 overflow-hidden'>
+            transition={{ duration: 2 }} className='h-screen flex flex-col items-center justify-center pt-40 '>
             <div className='relative flex items-center justify-center '>
                 <motion.div
                     initial={{
-                        opacity: 0
+                        opacity: 0,
                     }}
                     animate={{
                         rotate: 90,
                         opacity: 1,
-                        borderRadius: '20px'
+                        borderRadius: '20px',
                     }}
                     transition={{
                         duration: 2,
@@ -42,7 +42,7 @@ const Hero = (props: Props) => {
 
                     className='absolute h-[375px] w-[375px] md:h-[575px] md:w-[575px] border border-gray-400 '>
                 </motion.div>
-                <img src="selfie.jpg" alt="A picture of me" className='w-28 h-28 md:w-40 md:h-40 rounded-lg opacity-75 hover:opacity-90 z-30' />
+                <img src="selfie.jpg" alt="A picture of me" className='w-28 h-28 md:w-40 md:h-40 rounded-lg opacity-75 hover:opacity-90 z-10' />
             </div>
 
             <div className='flex flex-col relative items-center space-y-5 justify-center mt-2 pt-2'>
