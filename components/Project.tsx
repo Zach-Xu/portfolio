@@ -13,25 +13,28 @@ const Project = (props: Props) => {
     const selectedImgNumber = useSelector((state: AppState) => state.selectedImgNumber)
 
     return (
-        <div className={`flex flex-col h-full items-center 2xl:justify-center space-y-4 md:space-y-8 ${selectedImgNumber !== -1 ? 'justify-center' : 'justify-end'}`}>
-            <motion.div
-                initial={{
-                    opacity: 0
-                }}
-                whileInView={{
-                    opacity: 1
-                }}
-                transition={{
-                    duration: 2.5
-                }}
-            >
-                <h4 className={`text-center font-bold text-base md:text-2xl ${selectedImgNumber !== -1 && 'hidden'}`}>Movie App</h4>
+        <motion.div
+            initial={{
+                opacity: 0
+            }}
+            whileInView={{
+                opacity: 1
+            }}
+            transition={{
+                duration: 1.5
+            }}
+            className={` flex flex-col h-full w-screen items-center 2xl:justify-center space-y-3 md:space-y-5 ${selectedImgNumber !== -1 ? 'justify-center' : 'justify-end'}`}>
+            <div>
+
+                <h4 className={`text-center font-bold text-base md:text-2xl ${selectedImgNumber !== -1 && 'hidden'}`}>
+                    <a href="https://github.com/Zach-Xu/movie-app-front" target='_blank'>Movie App</a>
+                </h4>
                 <p className={`p-2 text-xs md:text-sm lg:text-base md:max-w-xl lg:max-w-3xl text-left space-y-5 ${selectedImgNumber !== -1 && 'hidden'}`}>
                     This app enables users to view, download, rate, and comment on movies. Users can filter movies by category and rating.
                     They can also upload movies, which will be stored in AWS S3 buckets, and manage their uploaded movies by updating their information.
                     Movie details are stored in AWS DynamoDB.
                 </p>
-            </motion.div>
+            </div>
             {/* Project images preview */}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {
@@ -44,20 +47,7 @@ const Project = (props: Props) => {
                     *  idx >= 4 && selectedImgNumber === -1                    there is no selected image and current image is the fifth or later      hiden on small and medium screen, display on large or above
                     */
                     array.map((a, idx) => (
-                        <motion.img
-                            initial={{
-                                y: 100,
-                                opacity: 0
-                            }}
-                            whileInView={{
-                                y: 0,
-                                opacity: 1
-                            }}
-                            transition={{
-                                duration: 1.5
-                            }}
-
-                            src={`/projects-img/movie-app-${idx + 1}.png`} key={idx}
+                        <img src={`/projects-img/movie-app-${idx + 1}.png`} key={idx}
                             className={`rounded-xl h-[150px] w-[325px] md:[h-100px] md:w-[250px] border-[3px] border-gray-500 cursor-pointer 
                    ${idx === selectedImgNumber ? 'col-span-full w-[90vw] h-[40vh] md:w-[75vw] md:h-[65vh]' : ''}
                    ${idx !== selectedImgNumber && selectedImgNumber !== -1 ? 'hidden' : ' inline-block'}
@@ -70,7 +60,7 @@ const Project = (props: Props) => {
                     ))
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 
