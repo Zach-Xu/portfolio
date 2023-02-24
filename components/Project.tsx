@@ -4,11 +4,15 @@ import { AppState, selectImage, unSelectImage } from '../redux/reducers'
 import { motion } from 'framer-motion'
 
 
-type Props = {}
+export interface ProjectProps {
+    appName: string
+    description: string
+    githubLink: string
+    images: string[]
+}
 
-const Project = (props: Props) => {
+const Project = ({ appName, description, images, githubLink }: ProjectProps) => {
 
-    const array = new Array(6).fill(0)
     const dispatch = useDispatch()
     const selectedImgNumber = useSelector((state: AppState) => state.selectedImgNumber)
 
@@ -27,12 +31,10 @@ const Project = (props: Props) => {
             <div>
 
                 <h4 className={`text-center font-bold text-base md:text-2xl ${selectedImgNumber !== -1 && 'hidden'}`}>
-                    <a href="https://github.com/Zach-Xu/movie-app-front" target='_blank'>Movie App</a>
+                    <a href={githubLink} target='_blank'>{appName}</a>
                 </h4>
                 <p className={`p-2 text-xs md:text-sm lg:text-base md:max-w-xl lg:max-w-3xl text-left space-y-5 ${selectedImgNumber !== -1 && 'hidden'}`}>
-                    This app enables users to view, download, rate, and comment on movies. Users can filter movies by category and rating.
-                    They can also upload movies, which will be stored in AWS S3 buckets, and manage their uploaded movies by updating their information.
-                    Movie details are stored in AWS DynamoDB.
+                    {description}
                 </p>
             </div>
             {/* Project images preview */}
@@ -46,8 +48,8 @@ const Project = (props: Props) => {
                     *  idx >= 2 && idx <= 3 && selectedImgNumber === -1        there is no selected image and current image is the third or fourth     hidden on small screen, display on medium or above
                     *  idx >= 4 && selectedImgNumber === -1                    there is no selected image and current image is the fifth or later      hiden on small and medium screen, display on large or above
                     */
-                    array.map((a, idx) => (
-                        <img src={`/projects-img/movie-app-${idx + 1}.png`} key={idx}
+                    images.map((image, idx) => (
+                        <img src={image} key={idx}
                             className={`rounded-xl h-[150px] w-[325px] md:[h-100px] md:w-[250px] border-[3px] border-gray-500 cursor-pointer 
                    ${idx === selectedImgNumber ? 'col-span-full w-[90vw] h-[40vh] md:w-[75vw] md:h-[65vh]' : ''}
                    ${idx !== selectedImgNumber && selectedImgNumber !== -1 ? 'hidden' : ' inline-block'}
