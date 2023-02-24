@@ -7,11 +7,11 @@ type Props = {}
 
 const Projects = (props: Props) => {
 
-    const hoveredImgNumber = useSelector((state: AppState) => state.hoveredImgNumber)
+    const selectedImgNumber = useSelector((state: AppState) => state.selectedImgNumber)
 
     return (
         <div id='projects' className='h-screen flex flex-col justify-center items-center relative p-10'>
-            <h3 className={`section-header ${hoveredImgNumber === -1 ? '' : 'hidden'}`}>Projects</h3>
+            <h3 className={`section-header ${selectedImgNumber === -1 ? 'inline-block' : 'hidden'}`}>Projects</h3>
             <Project />
         </div>
     )

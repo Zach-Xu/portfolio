@@ -1,27 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface AppState {
-    hoveredImgNumber: number
+    selectedImgNumber: number
 }
 
 const initialState: AppState = {
-    hoveredImgNumber: -1
+    selectedImgNumber: -1
 }
 
 const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        hoverImage: (state, action: PayloadAction<number>) => ({
+        selectImage: (state, action: PayloadAction<number>) => ({
             ...state,
-            hoveredImgNumber: action.payload
+            selectedImgNumber: action.payload
         }),
-        unHoverImage: (state) => ({
+        unSelectImage: (state) => ({
             ...state,
-            hoveredImgNumber: -1
+            selectedImgNumber: -1
         })
     }
 })
 
-export const { hoverImage, unHoverImage } = appSlice.actions
+export const { selectImage, unSelectImage } = appSlice.actions
 export default appSlice.reducer
