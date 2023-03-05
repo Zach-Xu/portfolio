@@ -6,9 +6,9 @@ type Props = {}
 
 const intro: string[] = [
     "< Hi there, my name's Zhen />",
-    "< You can call me Zach />",
+    "< I go by Zach />",
     "< I enjoy coding />",
-    "< Also a 4fun gamer />"
+    "< Futrue full-stack developer />"
 ]
 
 const Hero = (props: Props) => {
@@ -53,12 +53,12 @@ const Hero = (props: Props) => {
                 </div>
             </div>
             <div className='mt-24 md:mt-5 uppercase z-20'>
-                <ul className='list-none flex md:space-x-5 space-x-3'>
-
+                <ul className='list-none md:flex md:space-x-5 md:flex-row grid grid-cols-3 gap-3 '>
                     <li className='px-2 cursor-pointer'><a href="#about">About</a></li>
                     <li className='px-2 cursor-pointer'><a href="#skills">Skills</a></li>
                     <li className='px-2 cursor-pointer'><a href="#projects">Projects</a></li>
                     <li className='px-2 cursor-pointer'><a href="#education">Education</a></li>
+                    <li className='px-2 cursor-pointer'><a href="/resume.pdf" target='_blank'>Resume</a></li>
                 </ul>
             </div>
         </motion.div>

@@ -28,29 +28,30 @@ const Projects = (props: Props) => {
     }]
 
     return (
-        <div id='projects' className={`h-screen flex flex-col ${selectedImgNumber === -1 ? 'justify-end' : 'justify-center'}  2xl:justify-center items-center relative p-10`}>
-            <h3 className={`section-header ${selectedImgNumber === -1 ? 'inline-block' : 'hidden'}`}>Projects</h3>
-            <div className="carousel w-full">
-                {
-                    projects.map((project, idx) => (
-                        <div id={`item${idx + 1}`} key={idx} className="carousel-item w-full">
-                            <Project appName={project.appName} description={project.description} githubLink={project.githubLink} images={project.images} />
-                        </div>
-                    ))
-                }
+        <div id='projects' className={`h-screen flex flex-col relative justify-center`}>
+            <h3 className={`section-header w-screen text-center ${selectedImgNumber === -1 ? 'inline-block' : 'hidden'}`}>Projects</h3>
+            <div className='h-screen flex flex-col pt-[80px] md:pt-[112px] justify-center items-center'>
+                <div className="carousel w-full">
+                    {
+                        projects.map((project, idx) => (
+                            <div id={`item${idx + 1}`} key={idx} className="carousel-item w-full">
+                                <Project appName={project.appName} description={project.description} githubLink={project.githubLink} images={project.images} />
+                            </div>
+                        ))
+                    }
 
+
+                </div>
+                <div className={`flex justify-center w-full py-2 gap-2 ${selectedImgNumber !== -1 && 'hidden'}`}>
+                    {
+                        projects.map((_, idx) => (
+                            <a href={`#item${idx + 1}`} key={idx} className="btn btn-xs">{idx + 1}</a>
+                        ))
+                    }
+
+                </div>
 
             </div>
-            <div className={`flex justify-center w-full py-2 gap-2 ${selectedImgNumber !== -1 && 'hidden'}`}>
-                {
-                    projects.map((_, idx) => (
-                        <a href={`#item${idx + 1}`} key={idx} className="btn btn-xs">{idx + 1}</a>
-                    ))
-                }
-
-            </div>
-
-
         </div>
     )
 }
