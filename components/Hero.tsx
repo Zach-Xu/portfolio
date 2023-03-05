@@ -58,7 +58,7 @@ const Hero = (props: Props) => {
                     <li className='px-2 cursor-pointer'><a href="#skills">Skills</a></li>
                     <li className='px-2 cursor-pointer'><a href="#projects">Projects</a></li>
                     <li className='px-2 cursor-pointer'><a href="#education">Education</a></li>
-                    <li className='px-2 cursor-pointer'><a href="/resume.pdf" target='_blank'>Resume</a></li>
+                    <li className='px-2 cursor-pointer'><a href="/Resume.pdf" target='_blank'>Resume</a></li>
                 </ul>
             </div>
         </motion.div>

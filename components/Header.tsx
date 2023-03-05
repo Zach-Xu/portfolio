@@ -37,9 +37,12 @@ const Header = (props: Props) => {
                 transition={{
                     duration: 2
                 }}
+                className="flex items-center"
             >
-                <SocialIcon url='mailto:zxu71@my.centennialcollege.ca' network='email' bgColor='transparent' fgColor='gray' />
-                <p className='hidden md:inline-block text-gray-300'>GET IN TOUCH</p>
+
+
+                <SocialIcon url='#contact' network='email' bgColor='transparent' fgColor='gray' />
+                <a href="#contact" className='hidden md:inline-block text-gray-300'>GET IN TOUCH</a>
             </motion.div>
         </div>
     )
